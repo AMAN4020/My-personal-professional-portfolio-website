@@ -35,3 +35,23 @@ var swiper = new Swiper(".mySwiper", {
       clickable: true,
     },
   });
+
+
+// scroll to top button 
+const headerSection = document.querySelector(".header");
+
+const footerEle = document.querySelector(".section-footer");
+
+const scrollElement = document.createElement("div");
+scrollElement.classList.add("scrollTop-style");
+scrollElement.innerHTML = `<ion-icon name="arrow-up-outline" class="scroll-top"></ion-icon>`;
+
+footerEle.after(scrollElement);
+
+const scrollTop = ()=>{
+  headerSection.scrollIntoView({behavior:"smooth"})
+};
+
+scrollElement.addEventListener("click", scrollTop);
+
+

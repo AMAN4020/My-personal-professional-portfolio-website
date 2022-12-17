@@ -29,6 +29,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 h1,
 h2,
@@ -655,6 +656,7 @@ li {
   position: relative;
   color: var(--white);
   animation: water-wave 3s linear infinite;
+  cursor: pointer;
  }
  .f-credits p{
   text-align: center;
@@ -662,4 +664,25 @@ li {
  }
  .footer a:hover, .footer a:active{
   color: var(--white);
+ }
+
+ /*=======================================  
+        scroll top section
+ ==========================================*/
+ .scrollTop-style{
+  position: fixed;
+  right: 2%;
+  bottom: 5%;
+  z-index: 1;
+ }
+ .scroll-top{
+  width: 4rem;
+  height: 4rem;
+  background: var(--helper);
+  display: inline-block;
+  padding: 1.4rem 1.8rem;
+  position: relative;
+  color: var(--white);
+  animation: water-wave 3s linear infinite;
+  cursor: pointer;
  }
