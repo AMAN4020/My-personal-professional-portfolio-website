@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Work Sans", sans-serif;
-  zoom: 0.97;
 }
 :root {
   --heading: rgb(0 10 45);
@@ -28,7 +27,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 52.5%;                 /*    correction      */
   scroll-behavior: smooth;
 }
 h1,
@@ -92,13 +91,45 @@ li {
   color: var(--helper);
 }
 
-/* reusable code */
+
+.mobile-navbar-btn{
+  display: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.mobile-nav-icon[name="close-outline"]{
+  display: none;
+}
+
+/* sticky navbar  */
+.sticky .header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: var(--shadow);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sticky .section-hero{
+  margin-top: 10rem;
+}
+
+/*=======================================  
+          reusable code
+ ==========================================*/
+
 .section {
   padding: 9rem 0;
 }
 .container {
   max-width: 140rem;
-  margin: 0 auto;
+  margin: 0 auto;                             
 }
 .grid {
   display: grid;
@@ -686,3 +717,68 @@ li {
   animation: water-wave 3s linear infinite;
   cursor: pointer;
  }
+
+
+  /*=======================================  
+        media quries section
+ ==========================================*/
+@media (max-width: 1250px) {
+  .header{
+    position: relative;
+  }
+
+  .mobile-navbar-btn{
+    display: block;
+    z-index: 9999;
+    border: 3px solid var(--black);
+    color: var(--black);
+  }
+  .mobile-nav-icon{
+    width: 5rem;
+    height: 5rem;
+    columns: var(--black);
+  }
+  .header .logo{
+    /* width: 40%; */
+  }
+  .navbar{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .navbar-lists{
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar .navbar-lists .navbar-link:link,
+  .navbar .navbar-lists .navbar-link:visited{
+    color: var(--black);
+    font-size: 3.2rem;
+  }
+  .active .navbar{
+    transform: translateX(0%);
+    transition: all 0.5s linear;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"]{
+    display: none;
+  }
+  .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"]{
+    display: block;
+  }
+}

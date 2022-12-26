@@ -43,24 +43,24 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12030.745009214343!2d82.85112708616894!3d25.448941183019073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398fd554804e6db1%3A0x55601c90bc1d45f6!2sBABATPUR%20AIRPORT!5e0!3m2!1sen!2sin!4v1671292057454!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <div class="section-contact-main contact-container">
-            <form action="#">
+            <form   action="https://formspree.io/f/xqkoznyp" method="POST">
                 <div class="grid grid-two-column">
                     <div>
                         <label for="username"></label>
-                        <input type="text" name="username" placeholder="username" id="username">
+                        <input type="text" name="username" placeholder="username" id="username" required autocomplete="off">
                     </div>
                     <div>
                         <label for="email"></label>
-                        <input type="text" name="email" placeholder="demo@gmail.com" id="email">
+                        <input type="email" name="email" placeholder="demo@gmail.com" id="email" required autocomplete="off">
                     </div>
                 </div>
                 <div>
                     <label for="subject"></label>
-                    <input type="text" name="subject" placeholder="subject" id="subject">
+                    <input type="text" name="subject" placeholder="subject" id="subject" required autocomplete="off">
                 </div>
                 <div>
                     <label for="textarea"></label>
-                    <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+                    <textarea name="textarea" id="textarea" cols="30" rows="10" required autocomplete="off" minlength="5"></textarea>
                 </div>
                 <div>
                     <input type="submit" name="submit" id="submit" class="btn" value="send message">

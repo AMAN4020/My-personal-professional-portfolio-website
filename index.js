@@ -1,3 +1,14 @@
+//========================
+//creating responsive navbar component
+//=========================
+const mobile_nav = document.querySelector(".mobile-navbar-btn")
+const headerEle = document.querySelector(".header")
+
+mobile_nav.addEventListener('click', ()=>{
+  headerEle.classList.toggle('active')
+});
+
+
 // portfolio tabbed component 
 const p_btns  = document.querySelector(".p-btns");
 const p_btn = document.querySelectorAll(".p-btn");
@@ -38,7 +49,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 // scroll to top button 
-const headerSection = document.querySelector(".header");
+const heroSection = document.querySelector(".section-hero");
 
 const footerEle = document.querySelector(".section-footer");
 
@@ -49,9 +60,62 @@ scrollElement.innerHTML = `<ion-icon name="arrow-up-outline" class="scroll-top">
 footerEle.after(scrollElement);
 
 const scrollTop = ()=>{
-  headerSection.scrollIntoView({behavior:"smooth"})
+  heroSection.scrollIntoView({behavior:"smooth"})
 };
 
 scrollElement.addEventListener("click", scrollTop);
+
+//========================
+//creating a stiky responsive navbar
+//=========================
+const observer = new IntersectionObserver((entries)=>{
+  const ent = entries[0];
+  console.log(ent);
+  !ent.isIntersecting ? document.body.classList.add("sticky") : document.body.classList.remove("sticky");
+}, {
+  root: null,
+  threshold: 0,
+})
+
+observer.observe(heroSection);
+
+
+const workSection = document.querySelector('.section-work-data');
+const workobserver = new IntersectionObserver((entries, observer)=>{
+  const [entry] = entries;
+  // console.log(entry);
+  if(!entry.isIntersecting) return;
+
+  //animate number
+
+const counternum = document.querySelectorAll(".counter-number");
+
+const speed = 5;
+
+counternum.forEach((curElem)=>{
+const  updateNumber=()=>{
+  const targetNum = parseInt(curElem.dataset.numbers);
+  // console.log(targetNum);
+  const initialNum = parseInt(curElem.innerText);
+  // console.log(initialNum);
+
+  const increment = Math.trunc(targetNum/speed);
+  // console.log(increment);
+
+  if(initialNum < targetNum){
+    curElem.innerText = `${initialNum + increment}+`;
+    setTimeout(updateNumber, 1000);
+  }
+};
+
+  updateNumber();
+
+  observer.unobserve(workSection);
+});
+}, {
+  root: null,
+  threshold: 0,
+})
+workobserver.observe(workSection);
 
 
