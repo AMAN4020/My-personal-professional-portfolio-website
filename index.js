@@ -18,6 +18,8 @@ p_btns.addEventListener('click', (e)=>{
     const p_btn_clicked = e.target;
     console.log(p_btn_clicked);
 
+    if(! p_btn_clicked.classList.contains('p-btn')) return;
+
     p_btn.forEach((curElem)=>{curElem.classList.remove("p-btn-active")});
 
     p_btn_clicked.classList.add("p-btn-active");
@@ -34,7 +36,7 @@ p_btns.addEventListener('click', (e)=>{
     
 });
 
-// swapper js code 
+// swipper js code 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
     spaceBetween: 30,
@@ -46,6 +48,30 @@ var swiper = new Swiper(".mySwiper", {
       clickable: true,
     },
   });
+
+// media query for swipper
+const width_Size = window.matchMedia('(max-width: 780px)');
+
+const myjsmedia = (width_Size)=>{
+  if(width_Size.matches){
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    });
+  }
+  else{
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    });
+  }
+}
+
+
+//listener function
+myjsmedia(width_Size);
+
+width_Size.addEventListener('change', myjsmedia);
 
 
 // scroll to top button 
@@ -117,5 +143,4 @@ const  updateNumber=()=>{
   threshold: 0,
 })
 workobserver.observe(workSection);
-
 

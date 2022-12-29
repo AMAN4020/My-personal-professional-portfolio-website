@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="personel portfolio website to showcase the work I have done so far and all my personels life.">
+    <meta name="keywords" content="HTML, CSS, Javascript, portfolio website">
+    <meta name="author" content="Aman'tech">
     <title>Aman's Portfolio</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,7 +22,7 @@
 </head>
 
 <body>
-        <!-- ============================================
+    <!-- ============================================
             our header strart
     ============================================ -->
     <header class="header">
@@ -23,7 +30,7 @@
 
         <nav class="navbar">
             <ul class="navbar-lists">
-                <li><a href="#" class="navbar-link home-link">Home</a></li>
+                <li><a href="/index.html" class="navbar-link home-link">Home</a></li>
                 <li><a href="/about.html" class="navbar-link about-link">About</a></li>
                 <li><a href="/service.html" class="navbar-link service-link">Services</a></li>
                 <li><a href="#portfolio-section" class="navbar-link portfolio-link">Portfolio</a></li>
@@ -123,7 +130,7 @@
                     </div>
                 </div>
                 <div class="bio-data-btn">
-                    <a href="#" class="btn">Download CV</a>
+                    <a href="https://drive.google.com/file/d/1eex7hm77lmysPO5xxBWJ2T8-JxPnt77o/view?usp=share_link" class="btn" download target="_blank">Download CV</a>
                 </div>
             </div>
         </div>
@@ -503,15 +510,17 @@
         </div>
 
         <div class="section-contact-main contact-container">
-            <form   action="https://formspree.io/f/xqkoznyp" method="POST">
+            <form action="https://formspree.io/f/xqkoznyp" method="POST">
                 <div class="grid grid-two-column">
                     <div>
                         <label for="username"></label>
-                        <input type="text" name="username" placeholder="username" id="username" required autocomplete="off">
+                        <input type="text" name="username" placeholder="username" id="username" required
+                            autocomplete="off">
                     </div>
                     <div>
                         <label for="email"></label>
-                        <input type="email" name="email" placeholder="demo@gmail.com" id="email" required autocomplete="off">
+                        <input type="email" name="email" placeholder="demo@gmail.com" id="email" required
+                            autocomplete="off">
                     </div>
                 </div>
                 <div>
@@ -520,7 +529,8 @@
                 </div>
                 <div>
                     <label for="textarea"></label>
-                    <textarea name="textarea" id="textarea" cols="30" rows="10" required autocomplete="off" minlength="5"></textarea>
+                    <textarea name="textarea" id="textarea" cols="30" rows="10" required autocomplete="off"
+                        minlength="5" placeholder="Write your message"></textarea>
                 </div>
                 <div>
                     <input type="submit" name="submit" id="submit" class="btn" value="send message">

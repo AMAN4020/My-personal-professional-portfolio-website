@@ -29,6 +29,10 @@
 html {
   font-size: 52.5%;                 /*    correction      */
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body{
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -722,7 +726,36 @@ li {
   /*=======================================  
         media quries section
  ==========================================*/
-@media (max-width: 1250px) {
+ /* at 1500px */
+@media (max-width: 95em){
+  .container{
+    max-width: 130rem;
+    padding: 0 3.2rem;
+  }
+  .navbar-lists{
+
+  }
+}
+
+/* at 1200px */
+@media (max-width: 75em) {
+  html{
+    font-size: 56.25%;
+  }
+  .container{
+    max-width: 110rem;
+  }
+  .grid{
+    gap: 4.8rem;
+  }
+}
+
+/* at 980px */
+@media (max-width: 61.25em) {
+  html{
+    font-size: 50%;
+  }
+
   .header{
     position: relative;
   }
@@ -780,5 +813,117 @@ li {
   }
   .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"]{
     display: block;
+  }
+  /* hero section  */
+  .section-hero h1{
+    line-height: 1.05;
+  }
+
+  /* service section  */
+  .section-services .grid{
+    gap: 6rem;
+  }
+  .section-services .grid-three-column{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* section footer  */
+  .section-footer .grid-four-column{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .img-overlay .common-heading{
+    font-size: 3.2rem;
+  }
+  .img-overlay .common-heading::before,
+  .img-overlay .common-heading::after{
+    content: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+@media (max-width: 49em) {
+  .container{
+    max-width: 71rem;
+  }
+  .section-hero .grid-two-column{
+    grid-template-columns: 1fr;
+  }
+  .section-hero-data{
+    align-items: center;
+  }
+  .hero-para{
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .section-hero img{
+    width: 70%;
+  }
+  /* bio data  */
+  .section-biodata .grid-two-column{
+    grid-template-columns: 1fr;
+  }
+  .section-biodata .bio-image{
+    grid-row: 2;
+  }
+  .section-biodata .bio-image img{
+    width: 50%;
+  }
+
+  /* portfolio section  */
+  .section-portfolio .grid-three-column{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* work data  */
+  .section-work-data .grid-four-column{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-container{
+    padding: 0 3rem;
+  }
+}
+
+/* below 560px */
+@media (max-width: 35em) {
+  .header{
+    padding: 0 3.2rem;
+  }
+  /* portfolio  */
+  .p-btns{
+    gap: 2.8rem;
+  }
+  .btn{
+    padding: 1rem 2rem;
+  }
+  .counter-number{
+    font-size: 3.2rem;
+  }
+  .section-services .grid-three-column{
+    grid-template-columns: 1fr;
+  }
+  .section-hero h1{
+    font-size: 5rem;
+  }
+  .section-freelancing h2{
+    font-size: 3rem;
+  }
+  .contact-container{
+    padding: 0 3rem;
+  }
+  .contact-container .grid-two-column{
+    grid-template-columns: 1fr;
+  }
+  .section-contact-main input[type="submit"]{
+    max-width: 40%;
+  }
+  .section-footer .f-about,
+  .section-footer .f-address{
+    grid-column: 1/-1;
+  }
+
+  .img-overlay .common-heading{
+    font-size: 2.4rem;
   }
 }
